@@ -1,18 +1,16 @@
 import React from "react";
-import { BrandLogo } from "@/components/ui/brand/logo";
+import {BrandLogo} from "@/components/ui/brand/logo";
 import Link from "next/link";
-import { HamburgerMenu } from "@/components/Hamburgmenu";
+import {HamburgerMenu} from "./hamburger";
 
 export const Header: React.FC = () => {
   return (
-    <header className="flex items-center justify-between absolute top-0 left-0 w-full px-10 py-4 z-50">
-     
+    <header className="flex items-center justify-between absolute top-0 left-0 w-full px-6 md:px-10 py-4 z-50">
       <Link href="/">
-        <BrandLogo className="h-8 justify-start" />
+        <BrandLogo className="h-8 justify-start"/>
       </Link>
 
-      
-      <nav className="hidden md:flex items-center gap-10">
+      <nav className="hidden lg:flex items-center gap-10">
         <ul className="flex items-center gap-10">
           <li>
             <Link href="/team" className="text-white hover:text-gray-300">
@@ -42,8 +40,7 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
 
-      
-      <HamburgerMenu />
+      <HamburgerMenu/>
     </header>
   );
 };

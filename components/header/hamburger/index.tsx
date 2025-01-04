@@ -18,9 +18,8 @@ export const HamburgerMenu: React.FC = () => {
 
   return (
     <>
-    
       <button
-        className="md:hidden text-white focus:outline-none"
+        className="lg:hidden text-white focus:outline-none"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Toggle Navigation"
       >
@@ -42,19 +41,27 @@ export const HamburgerMenu: React.FC = () => {
           ></span>
         </div>
       </button>
-
-      
       <nav
-        className={`${
-          isMenuOpen ? "flex" : "hidden"
-        } md:hidden flex-col items-start absolute top-16 left-0 w-full bg-transparent px-10 py-4 z-40`}
+        className={`${isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"} 
+        flex md:hidden overflow-hidden transition-opacity ease-in-out duration-500 
+        flex-col items-end text-right absolute top-14 right-6 w-fit bg-dark 
+        bg-opacity-50 text-light rounded-md px-4 py-4 z-40 text-title !font-normal`}
       >
         <ul className="flex flex-col gap-4">
-          {navItems.map(({ name, href }) => (
+          <li>
+            <Link
+              href={'/'}
+              className="pr-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+          </li>
+          {navItems.map(({name, href}) => (
             <li key={name}>
               <Link
                 href={href}
-                className="text-white hover:text-gray-300"
+                className="pr-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {name}
@@ -64,7 +71,7 @@ export const HamburgerMenu: React.FC = () => {
           <li>
             <Link
               href="#"
-              className="btn-primary"
+              className="px-4 bg-blue text-light"
               onClick={() => setIsMenuOpen(false)}
             >
               Get Tickets
