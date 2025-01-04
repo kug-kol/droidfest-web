@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${roboto.variable} antialiased w-full h-full min-h-screen flex flex-col text-body`}
+        className={`${inter.className} ${inter.variable} ${roboto.variable} antialiased w-full h-full min-h-screen flex flex-col text-body`}
       >
       <>
         <Header />
