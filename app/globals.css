@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --light: #FFFFFF;
   --dark: #1B1B1B;
@@ -18,13 +19,67 @@
 
   --background: #090B11;
   --foreground: #FFFFFF;
+
+  --font-display: 2rem; 
+  --font-display-subtext: 1rem;
+  --font-heading: 1.75rem;
+  --font-heading-subtext: 1.25rem;
+  --font-banner-heading: 1.5rem;
+  --font-title: 1.25rem;
+  --font-body: 1rem;
+  --font-small: 0.875rem;
+  --font-body-spec: 1rem;
 }
 
+@media (min-width: 640px) {
+  :root {
+    --font-display: 2.5rem;
+    --font-display-subtext: 1.25rem;
+    --font-heading: 2rem;
+    --font-heading-subtext: 1.5rem;
+    --font-banner-heading: 1.75rem;
+    --font-title: 1.5rem;
+    --font-body: 1.125rem;
+    --font-small: 1rem;
+    --font-body-spec: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-display: 3rem;
+    --font-display-subtext: 1.5rem;
+    --font-heading: 2.25rem;
+    --font-heading-subtext: 1.75rem;
+    --font-banner-heading: 2rem;
+    --font-title: 1.75rem;
+    --font-body: 1.25rem;
+    --font-small: 1.125rem;
+    --font-body-spec: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-display: 4rem;
+    --font-display-subtext: 2rem;
+    --font-heading: 3rem;
+    --font-heading-subtext: 2.5rem;
+    --font-banner-heading: 2.5rem;
+    --font-title: 2rem;
+    --font-body: 1.5rem;
+    --font-small: 1.25rem;
+    --font-body-spec: 1.5rem;
+  }
+}
+
+/* Body styles */
 body {
   color: var(--foreground);
   background: var(--background);
 }
 
+/* Button styles */
 .btn-primary {
   @apply bg-light px-6 py-2.5 text-dark rounded-full transition-colors duration-300 ease-in-out hover:bg-blue hover:text-light;
 }
@@ -32,6 +87,7 @@ body {
 .btn-secondary {
   @apply px-6 py-2.5 rounded-full border border-light transition-colors duration-300 ease-in-out hover:border-magenta;
 }
+
 
 .bg-mesh {
   background-image: url('/bgmesh.webp');
