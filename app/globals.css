@@ -3,19 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --light: #FFFFFF;
+  --dark: #1B1B1B;
+  --accented-dark: #090B11;
+  --gray: #9D9DA0;
+  --blue: #7F52FF;
+  --magenta: #C811E2;
+  --accented-magenta: #9B02AC;
+  --lightened-purple: #8F00E7;
+  --dark-purple: #2C0047;
+  --red: #EF4857;
+  --plum: #860152;
+  --yellow: #FF9419;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #090B11;
+  --foreground: #FFFFFF;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+  @apply bg-light px-6 py-2.5 text-dark rounded-full transition-colors duration-300 ease-in-out hover:bg-blue hover:text-light;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 rounded-full border border-light transition-colors duration-300 ease-in-out hover:border-magenta;
+}
+
+.bg-mesh {
+  background-image: url('/bgmesh.webp');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
 }
